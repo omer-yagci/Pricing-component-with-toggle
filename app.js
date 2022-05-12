@@ -1,21 +1,6 @@
-const slider = document.querySelector(".slider");
-const btnMid = document.querySelectorAll(".btn");
-
-btnMid.forEach((buttons) => {
-  buttons.addEventListener("click", () => {
-    buttons.addEventListener("click", changeColor);
+document.querySelector(".slider").addEventListener("click", () => {
+  const moneys = document.querySelectorAll(".money");
+  moneys.forEach((el) => {
+    el.classList.toggle("hidden");
   });
 });
-
-const body = document.querySelector("body");
-slider.addEventListener("click", changeColor);
-
-function changeColor() {
-  let r = Math.floor(Math.random() * 255 + 1);
-  let g = Math.floor(Math.random() * 255 + 1);
-  let b = Math.floor(Math.random() * 255 + 1);
-
-  body.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-  btnMid.style.background = `rgb(${r}, ${g}, ${b})`;
-}
-console.log(btnMid);
